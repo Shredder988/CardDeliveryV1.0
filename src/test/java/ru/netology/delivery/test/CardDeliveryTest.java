@@ -208,46 +208,6 @@ public class CardDeliveryTest {
                 .shouldHave(Condition.text("Встреча успешно забронирована на " + DataGenerator.generateDate(3, "dd.MM.yyyy")), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
     }
-
-    @Test
-    void shouldSendFormShortName() {
-        $("[data-test-id=city] input").setValue("Москва");
-        $("[data-test-id=date] input").doubleClick().sendKeys(DataGenerator.generateDate(3, "dd.MM.yyyy"));
-        $("[data-test-id=name] input").setValue("Ян И");
-        $("[data-test-id=phone] input").setValue("+79031234567");
-        $("[data-test-id=agreement]").click();
-        $(By.className("button")).click();
-
-        $(".notification__content")
-                .shouldHave(Condition.text("Встреча успешно забронирована на " + DataGenerator.generateDate(3, "dd.MM.yyyy")), Duration.ofSeconds(15))
-                .shouldBe(Condition.visible);
-    }
-
-    @Test
-    void shouldSendFormLongName() {
-        $("[data-test-id=city] input").setValue("Москва");
-        $("[data-test-id=date] input").doubleClick().sendKeys(DataGenerator.generateDate(3, "dd.MM.yyyy"));
-        $("[data-test-id=name] input").setValue("Абдурахманганджи Христорождественский-Полонский");
-        $("[data-test-id=phone] input").setValue("+79031234567");
-        $("[data-test-id=agreement]").click();
-        $(By.className("button")).click();
-
-        $(".notification__content")
-                .shouldHave(Condition.text("Встреча успешно забронирована на " + DataGenerator.generateDate(3, "dd.MM.yyyy")), Duration.ofSeconds(15))
-                .shouldBe(Condition.visible);
-    }
-
-    @Test
-    void shouldSendFormNameWithIch() {
-        $("[data-test-id=city] input").setValue("Москва");
-        $("[data-test-id=date] input").doubleClick().sendKeys(DataGenerator.generateDate(3, "dd.MM.yyyy"));
-        $("[data-test-id=name] input").setValue("Сергей Иванович");
-        $("[data-test-id=phone] input").setValue("+79031234567");
-        $("[data-test-id=agreement]").click();
-        $(By.className("button")).click();
-
-        $(".notification__content")
-                .shouldHave(Condition.text("Встреча успешно забронирована на " + DataGenerator.generateDate(3, "dd.MM.yyyy")), Duration.ofSeconds(15))
-                .shouldBe(Condition.visible);
-    }
 }
+
+    
